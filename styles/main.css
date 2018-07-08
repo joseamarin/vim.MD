@@ -1,0 +1,137 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    font-
+}
+
+.book-wrapper {
+    position: fixed;
+   /* top: 0; removed for top nav bar */ 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.book-wrapper-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: no-wrap;
+}
+
+.book-col--40 {
+    width: 40%;
+    overflow: hidden; /* to specific put else where */
+}
+
+.book-col--60 {
+    width: 60%;
+    overflow: auto; /* to specific put else where */
+}
+
+.book__col--60,
+.book__col--40 {
+    height: 100%;
+    overflow: auto;
+}
+
+.book-content {
+    width: 100%;
+    background-color: white;
+    overflow: auto;
+    padding: 20px;
+}
+
+#book .colitem {
+    background-color: transparent;
+    color: white;
+    -webkit-transition: all 0.3s ease-in;
+       -moz-transition: all 0.3s ease-in;
+            transition: all 0.3s ease-in;
+}
+
+.book-input {
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+}
+
+#book .main-content > * {
+    width: 80%;
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#book .main-content h1 {
+    font-weight: 900;
+    font-size: 4rem;
+    font-variant: small-caps;
+}
+
+#book .main-content h2 {
+    font-weight: 900;
+    font-size: 3rem;
+    font-variant: small-caps;
+}
+
+#book .main-content h3 {
+    font-weight: 900;
+    font-size: 2.25rem;
+    font-variant: small-caps;
+}
+
+#book .main-content h4 {
+    font-weight: 900;
+    font-size: 2rem;
+    font-variant: small-caps;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#book .main-content h5 {
+    font-weight: 900;
+    font-size: 1.75rem;
+    font-variant: small-caps;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#book .main-content h6 {
+    font-weight: 900;
+    font-size: 1.5rem;
+    font-variant: small-caps;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#book .main-content pre {
+    margin-left: -20px;
+    margin-right: 0;
+    width: calc( 100% + 40px );
+    max-width: initial;
+
+    background-color: #000000;
+}
+
+#book .main-content pre code {
+    width: 80%;
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#book .flex-centered {
+    align-self: center;
+}
+
+#book .CodeMirror {
+    height: 100%;
+}
