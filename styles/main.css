@@ -135,3 +135,7 @@ html, body {
 #book .CodeMirror {
     height: 100%;
 }
+
+#book .CodeMirror-cursor {
+    width: 10px;
+}

@@ -1,44 +1,42 @@
 (function() {
-    
-    const myCodeMirror = CodeMirror(document.querySelector('.book-col--40'), {
-        value: window.localStorage.getItem('data'),
+
+    if (!window.localStorage.getItem('markdown') || !window.localStorage.getItem('markdown').replace(/\s/g, '')) {
+        window.localStorage.setItem('markdown', '# Your markdown _here_')
+    } 
+
+    const myCodeMirror = CodeMirror(document.querySelector('.js-input'), {
+        value: window.localStorage.getItem('markdown'),
         mode:  "javascript",
+        lineWrapping: true,
         //lineNumbers: true,
-        keyMap: 'vim'
+        keyMap: 'vim',
+        theme: 'the-matrix'
 
     });
 
-    console.log(myCodeMirror.getValue() )
-
-    CodeMirror.Vim.map('kj', '<Esc>', 'insert') // comment out if you want to use normal <Esc> key to exit insert mode
-
     if (myCodeMirror) {
+        CodeMirror.Vim.map('kj', '<Esc>', 'insert') // to use kj as <Esc> also 
+
         hljs.initHighlightingOnLoad();
-        if (window.localStorage.getItem('data')) {
-            myCodeMirror.value = window.localStorage.getItem('data');
-            document.querySelector('.js-content').innerHTML = marked(window.localStorage.getItem('data'));
+
+        if (window.localStorage.getItem('markdown')) {
+            myCodeMirror.value = window.localStorage.getItem('markdown');
+            document.querySelector('.js-content').innerHTML = marked(window.localStorage.getItem('markdown'));
         }
         else {
             document.querySelector('.js-content').innerHTML = myCodeMirror.getValue(); 
         }
-        document.querySelector('.CodeMirror-code').addEventListener('keyup', event => {
-            const val = event.target.value;
-            const transformed = marked(val);
+        document.querySelector('.CodeMirror').addEventListener('keyup', event => {
+            const transformed = marked(myCodeMirror.getValue());
             document.querySelector('.js-content').innerHTML = transformed;
             for (let i = 0; i < document.getElementsByTagName('code').length; i++) {
                 hljs.highlightBlock(document.getElementsByTagName('code')[i]);
             }
             setTimeout(() => {
-                document.querySelector('.js-content').parentElement.scrollTop = 10000000;
+                document.querySelector('.js-content').parentElement.parentElement.scrollTop = 10000000;
             }, 250)
-            window.localStorage.setItem('data', val);
+            window.localStorage.setItem('markdown', myCodeMirror.getValue());
         });
     }
-
-    // const vim = new VIM();
-
-    // vim.attach_to(document.querySelector('.js-input'));
-    // document.querySelector('.CodeMirror-code').focus();
-
 
 })();
