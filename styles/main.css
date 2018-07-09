@@ -139,3 +139,7 @@ html, body {
 #book .CodeMirror-cursor {
     width: 10px;
 }
+
+hr {
+    background-color: #000;
+}

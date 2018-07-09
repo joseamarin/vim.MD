@@ -11,7 +11,6 @@
         //lineNumbers: true,
         keyMap: 'vim',
         theme: 'the-matrix'
-
     });
 
     if (myCodeMirror) {
@@ -26,7 +25,7 @@
         else {
             document.querySelector('.js-content').innerHTML = myCodeMirror.getValue(); 
         }
-        document.querySelector('.CodeMirror').addEventListener('keyup', event => {
+        document.querySelector('.js-input').addEventListener('keyup', event => {
             const transformed = marked(myCodeMirror.getValue());
             document.querySelector('.js-content').innerHTML = transformed;
             for (let i = 0; i < document.getElementsByTagName('code').length; i++) {

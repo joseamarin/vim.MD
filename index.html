@@ -5,28 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VIM markdown editor</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="styles/semantic.min.css">
+    <link rel="stylesheet" href="styles/bulma.min.css">
     <link rel="stylesheet" href="styles/xt256.css">
     <link rel="stylesheet" href="lib/codemirror.min.css">
     <link rel="stylesheet" href="lib/the-matrix.css">
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body id="book">
-    <div class="ui inverted menu" style="margin-bottom: 0;">
-        <div class="header item">
-            Home 
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://bulma.io">
+                <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
         </div>
-        <a class="item">
-            vim.MD    
-        </a>
-        <a class="item">
-            Export
-        </a>
-    </div>
+    </nav>
     <div class="book-wrapper">
         <div class="book-wrapper-inner">
-            <div class="book-col--40 js-input"> 
-            </div>
+            <div class="book-col--40 js-input"></div>
             <div class="book-col--60">
                 <div class="book-content">
                     <div class="main-content js-content" style="padding-bottom: 100px;"></div> 
