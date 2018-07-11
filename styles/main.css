@@ -149,12 +149,19 @@ html, body {
     background-color: #000;
 }
 
-.dot {
-    display: flex;
-    align-items: center;
-    font-size: 20px;
+#book .navbar {
+    border-bottom: 1px solid #ccc;
 }
 
 #book .navbar-item:hover {
     font-size: 20px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #74818e;  
 }

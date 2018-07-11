@@ -2,78 +2,43 @@
 <html lang="en-us" class="has-navbar-fixed-top">
 <head>
 	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIM markdown editor</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Vim.md</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
     <link rel="stylesheet" href="styles/bulma.min.css">
     <link rel="stylesheet" href="styles/xt256.css">
     <link rel="stylesheet" href="lib/codemirror.min.css">
     <link rel="stylesheet" href="lib/the-matrix.css">
+    <link rel="stylesheet" href="styles/dialog.css">
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body id="book">
-    <div class="book-wrapper">
     <nav class="navbar is-fixed-top is-transparent">
         <div class="navbar-brand">
             <a class="navbar-item" href="#">
                 <img src="assets/Vimlogo.svg" alt="vim" width="28" height="28">
-                <strong><em>.MD</em></strong>
+                <strong><em>.md</em></strong>
             </a>
         </div>
-
-        <div id="navbarExampleTransparentExample" class="navbar-menu">
-            <div class="navbar-start">
-                <a class="navbar-item" href="https://bulma.io/">
-                    Home
-                </a>
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link" href="/documentation/overview/start/">
-                        Docs
-                    </a>
-                    <div class="navbar-dropdown is-boxed">
-                        <a class="navbar-item" href="/documentation/overview/start/">
-                            Overview
-                        </a>
-                        <a class="navbar-item" href="https://bulma.io/documentation/modifiers/syntax/">
-                            Modifiers
-                        </a>
-                        <a class="navbar-item" href="https://bulma.io/documentation/columns/basics/">
-                            Columns
-                        </a>
-                        <a class="navbar-item" href="https://bulma.io/documentation/layout/container/">
-                            Layout
-                        </a>
-                        <a class="navbar-item" href="https://bulma.io/documentation/form/general/">
-                            Form
-                        </a>
-                        <hr class="navbar-divider">
-                        <a class="navbar-item" href="https://bulma.io/documentation/elements/box/">
-                            Elements
-                        </a>
-                        <a class="navbar-item is-active" href="https://bulma.io/documentation/components/breadcrumb/">
-                            Components
-                        </a>
-                    </div>
-                </div>
-            </div>
-
+        <div class="navbar-menu">
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="field is-grouped">
-                        <p class="control">
-                        <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="http://localhost:4000" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=http://localhost:4000&amp;via=jgthms">
+                        <p class="control js-copy">
+                        <a class="bd-tw-button button is-black" href="#">
                             <span class="icon">
-                                <i class="fab fa-twitter"></i>
+                                <i class="fas fa-copy"></i>
                             </span>
                             <span>
-                                Fork
+                                Copy
                             </span>
                         </a>
                         </p>
                         <p class="control">
-                        <a class="button is-primary" href="https://github.com/jgthms/bulma/releases/download/0.7.1/bulma-0.7.1.zip">
+                        <a class="button is-success" href="#">
                             <span class="icon">
-                                <i class="fas fa-download"></i>
+                                <i class="fas fa-share-square"></i>
                             </span>
                             <span>Export</span>
                         </a>
@@ -83,6 +48,7 @@
             </div>
         </div>
     </nav>
+    <div class="book-wrapper">
         <div class="book-wrapper-inner">
             <div class="book-col--40 js-input"></div>
             <div class="book-col--60">
@@ -96,6 +62,8 @@
     <script src="javascript/marked.min.js"></script>
     <script src="lib/codemirror.min.js"></script>
     <script src="lib/vim.min.js"></script>
+    <script src="javascript/searchcursor.js"></script>
+    <script src="javascript/dialog.js"></script>
     <script src="javascript/main.js"></script>
 </body>
 </html>

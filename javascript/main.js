@@ -32,10 +32,23 @@
                 hljs.highlightBlock(document.getElementsByTagName('code')[i]);
             }
             setTimeout(() => {
-                document.querySelector('.js-content').parentElement.parentElement.scrollTop = editor.getCursor().line * 9;
+                if (editor.getCursor().line === editor.lineCount() -1) {
+                    document.querySelector('.js-content').parentElement.parentElement.scrollTop = 1000000;
+                }
+                else {
+                    document.querySelector('.js-content').parentElement.parentElement.scrollTop = editor.getCursor().line * 20;
+                }
             }, 250)
             window.localStorage.setItem('markdown', editor.getValue());
         });
     }
+
+    const copy = () => {
+        const copyText = document.querySelector(".js-copy");
+        copyText.select(editor.getValue());
+        document.execCommand("copy");
+    }
+
+    document.querySelector(".js-copy").addEventListener("click", copy);
 
 })();
