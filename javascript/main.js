@@ -43,12 +43,28 @@
         });
     }
 
-    const copy = () => {
-        const copyText = document.querySelector(".js-copy");
-        copyText.select(editor.getValue());
-        document.execCommand("copy");
-    }
+    document.querySelector('.js-copy').addEventListener('click', event => {
+        const textarea = document.createElement('textarea');
+        textarea.innerHTML = window.localStorage.getItem('markdown');
+        const successful = document.execCommand('copy'); 
+        const textToCopy = document.querySelector('textarea');
+        document.querySelector('.js-input').appendChild(textarea);
+        textarea.focus();
+        textarea.select();
 
-    document.querySelector(".js-copy").addEventListener("click", copy);
+        try {
+            const successful = document.execCommand('copy'); 
+        }
+        catch (err) {
+            alert('Copy not supported');
+        }
+        finally {
+            document.querySelector('.js-input').removeChild(textarea);
+        }
+    });
+
+    document.querySelector('.js-export').addEventListener('click', event => {
+        window.open('about:blank', '_blank');
+    });
 
 })();
