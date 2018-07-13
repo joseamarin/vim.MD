@@ -133,8 +133,8 @@ html, body {
 
 }
 
-#book .flex-centered {
-    align-self: center;
+#book td > code {
+    background-color: #000000;
 }
 
 #book .CodeMirror {
