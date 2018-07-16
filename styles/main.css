@@ -5,6 +5,26 @@ html, body {
     overflow: hidden;
 }
 
+table {
+    border-radius: 3px;
+}
+
+table,
+th,
+td
+{
+    border: 1px solid #c6cbd1;
+}
+
+table th {
+    padding: 6px 13px;
+    text-align: center;
+}
+
+#book {
+    position: fixed;
+}
+
 .book-wrapper {
     position: relative;
     top: 0;
@@ -111,6 +131,10 @@ html, body {
     margin-bottom: 0;
 }
 
+#book .main-content p {
+    margin-bottom: 1em;
+}
+
 #book .main-content blockquote {
     border-left: 0.5rem solid #2185D0;
     padding-left: 3rem;
@@ -133,10 +157,6 @@ html, body {
 
 }
 
-#book td > code {
-    background-color: #000000;
-}
-
 #book .CodeMirror {
     height: 100%;
 }
@@ -155,6 +175,15 @@ html, body {
 
 #book .navbar-item:hover {
     font-size: 20px;
+}
+
+#book table code {
+    color: black; 
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    display: block;
+    background-color: rgba(27,31,35,0.05);
 }
 
 ::-webkit-scrollbar {
