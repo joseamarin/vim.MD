@@ -21,6 +21,10 @@ table th {
     text-align: center;
 }
 
+hr {
+    background-color: #000;
+}
+
 #book {
     position: fixed;
 }
@@ -132,7 +136,23 @@ table th {
 }
 
 #book .main-content p {
-    margin-bottom: 1em;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+#book p > code {
+    display: inline;
+    color: red; 
+    padding: .25em .5em .25em;
+    background-color: rgba(27,31,35,0.05);
+}
+
+#book p > code > .hljs-tag {
+    color: red; 
+}
+
+#book p > code > .hljs-tag .hljs-name {
+    color: red; 
 }
 
 #book .main-content blockquote {
@@ -154,7 +174,6 @@ table th {
     max-width: 1024px;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 #book .CodeMirror {
@@ -165,9 +184,6 @@ table th {
     width: 10px;
 }
 
-#book hr {
-    background-color: #000;
-}
 
 #book .navbar {
     border-bottom: 1px solid #ccc;
@@ -178,7 +194,7 @@ table th {
 }
 
 #book table code {
-    color: black; 
+    color: red; 
     padding: 0.2em 0.4em;
     margin: 0;
     font-size: 85%;
